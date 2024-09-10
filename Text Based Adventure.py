@@ -26,5 +26,6 @@ def combat():
 
     count = 0
     
-    if count % 2 == 0:
+    if count % 2 == 0: 
         turn = input("")
+    
