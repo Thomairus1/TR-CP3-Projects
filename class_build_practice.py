@@ -9,7 +9,7 @@ class Movies:
         
         
 # prints the info about the movies        
-    def __repr__(self):
+    def __str__(self):
         return f"Title: {self.title}\nRelease Year: {self.release_year}\nDirector: {self.director}\nRating: {self.rating}\nGenre: {self.genre}\nCast: {self.cast}\n"
     
     def __lt__(self, other):
