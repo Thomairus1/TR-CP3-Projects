@@ -7,7 +7,7 @@ class Pokemon:
         self.lvl = lvl
     def combat(self, other):
         if self.lvl > other.lvl:
-            return f"{self.name } won!"
+            return f"{self.name} won!"
         elif self.lvl < other.lvl:
             return f"{other.name} has defeated you!"
         else:
