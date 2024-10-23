@@ -5,6 +5,7 @@ class Pokemon:
         self.hp = hp
         self.typ = typ
         self.lvl = lvl
+    
     def combat(self, other):
         if self.lvl > other.lvl:
             return f"{self.name} won!"

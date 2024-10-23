@@ -19,6 +19,9 @@ class Animal:
             other.losses += 1
             self.losses += 1
             return "Tie"
+        
+    def get_name(self):
+        return self.name
     #use __str__ to print something so we know it does something
     #makes it more readble
     def __str__(self):
