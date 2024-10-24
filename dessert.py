@@ -3,12 +3,14 @@ class DessertItem:
         self.name = name
     def __str__(self):
         return f"You ordered a {self.name}"
+    def get_name(self):
+        return self.name
 class Candy(DessertItem):
     def __init__(self, name, candy_weight, price_per_pound):
         super().__init__(name)
         self.candy_weight = candy_weight
         self.price_per_pound = price_per_pound
-
+    
 class Cookie(DessertItem):
     def __init__(self, name, cookie_quantity, price_per_dozen):
         super().__init__(name)
