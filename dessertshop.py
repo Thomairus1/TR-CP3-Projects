@@ -21,3 +21,6 @@ def main():
     print("Vanilla")
     order1.add(Cookie("Oatmeal Raisin", 2, 3.45))
     print("Oatmeal Raisin")
+    print(f"Total number of items in order: {order1.__len__()}")
+
+main()
