@@ -54,7 +54,7 @@ def heal(max_HP):
             if player_hp <= max_HP:
                 return f"You health is now: {player_hp}.\n"
             elif player_hp > max_HP:
-                player_hp -= (player_hp-player_HP)
+                player_hp -= (player_hp-player_hp)
                 return f"You health is now: {player_hp}.\n"
             else:
                 return f"You health is now: {player_hp}.\n"
@@ -82,12 +82,12 @@ def combat(player_DMG, max_HP, enemy_name, enemy_dmg, enemy_hp):
                     break
             elif turn == "heal": 
                 count += 1
-                print(heal(max_HP))
+                print(heal(max_hp))
         elif count % 2 != 0:
             player_hp -= enemy_dmg
             print(f"The {enemy_name} attacked you for {enemy_dmg}. Your health is now {player_hp}.\n")
             if player_hp <= 0:
-                return "You lost all your health. Game Over.\n"
+                return "Over"
             count += 1
         
 r_count = 1
@@ -111,9 +111,8 @@ while True:
                 r1 = True
                 break
             else:
-                r1 = True
+                go1 = True
                 continue
-        r1 = True
         else:
             print("You've already been in this room.")
     elif r_count == 2:
@@ -146,7 +145,10 @@ while True:
     elif r_count == 3:
         if r3 == False:
             r3_return = combat(player_dmg, max_hp, enemy2_name, enemy2_dmg, enemy2_hp)
-            if r3_return == True:
+            if r3_return == "Over":
+                print("You lost all your health. Game Over.\n")
+                break
+            elif r3_return == True:
                 c3 = input("\nThe enemy drops a pair of Gaunlets. Do you pick them up for + 75 damage?('yes' or 'no') ")
                 if c3 == "yes":
                     print("You replaced your old weapon.")
@@ -172,7 +174,10 @@ while True:
         if r4 == False:
             r4_return = combat(player_dmg, max_hp, enemy1_name, enemy1_dmg, enemy1_hp)
             r4_return = combat(player_dmg, max_hp, enemy1_name, enemy1_dmg, enemy1_hp)
-            if r4_return == True:
+            if r4_return == "Over":
+                print("You lost all your health. Game Over.\n")
+                break
+            elif r4_return == True:
                 c4 = input("\nThe enemies drop two HP Potions. Do you pick them up? ('yes' or 'no') ")
                 if c4 == "yes":
                     heals.append("HP Potion(heals 50 health)")
@@ -194,7 +199,10 @@ while True:
     elif r_count == 5:
         if r5 == False:
             r5_return = combat(player_dmg, max_hp, enemy2_name, enemy2_dmg, enemy2_hp)
-            if r5_return == True:
+            if r5_return == "Over":
+                print("You lost all your health. Game Over.\n")
+                break
+            elif r5_return == True:
                 c5 = input("\nThe enemy dropped a Red Armor. Do you pick it up for + 100 max health? ('yes' or 'no') ")
                 if c5 == "yes":
                     if max_hp == 150:
@@ -227,7 +235,10 @@ while True:
     elif r_count == 6:
         if r6 == False:
             r6_return = combat(player_dmg, max_hp, enemy1_name, enemy1_dmg, enemy1_hp)
-            if r6_return == True:
+            if r6_return == "Over":
+                print("You lost all your health. Game Over.\n")
+                break
+            elif r6_return == True:
                 c6 = input("\nThe enemy dropped a blue armor. Do you pick it up for + 50 max health?('yes' or 'no') ")
                 if c6 == "yes":
                     if max_hp == 200:
@@ -263,7 +274,10 @@ while True:
     elif r_count == 7:
         if r7 == False:
             r7_return = combat(player_dmg, max_hp, enemy1_name, enemy1_dmg, enemy1_hp)
-            if r7_return == True:
+            if r7_return == "Over":
+                print("You lost all your health. Game Over.\n")
+                break
+            elif r7_return == True:
                 c7 = input("\nThe enemy dropped a Steel Sword. Do you pick it up for + 45 damage?('yes' or 'no') ")
                 if c6 == "yes":
                     player_dmg = 70
@@ -285,7 +299,10 @@ while True:
     elif r_count == 8:
         if r8 == False:
             r8_return = combat(player_dmg, max_hp, enemy2_name, enemy2_dmg, enemy2_hp)
-            if r8_return == True:
+            if r8_return == "Over":
+                print("You lost all your health. Game Over.\n")
+                break
+            elif r8_return == True:
                 c8 = input("\nThe enemy drops a Big HP Potion. Do you pick it up?('yes' or 'no') ")
                 if c8 == "yes":
                     heals.append("Big HP Potion(heals 100 health)")
@@ -306,7 +323,10 @@ while True:
             print("You've alredy been in this room.")
     elif r_count == 9:
         r9_return = combat(player_dmg, max_hp, boss_name, boss_dmg, boss_hp)
-        if r9 == True:
+        if r9_return == "Over":
+                print("You lost all your health. Game Over.\n")
+                break
+        elif r9_return == True:
             print(f"You defeated the {boss_name}. You win.\n")
             print("The wall behind the boss opens up, and you climb up stairs to freedom from the dungeon.")
             break
