@@ -114,7 +114,7 @@ while True:
                 go1 = True
                 continue
         else:
-            print("You've already been in this room.")
+            print("\nYou've already been in this room.")
     elif r_count == 2:
         if r2 == False:
             c1 = input("\nYou find two Small health Potions in the center of the room. Do you pick them up? ('yes' or 'no') ")
@@ -128,7 +128,7 @@ while True:
                 print(f"\nYour damage is now {player_dmg}.\n")
             r2 = True
         else:
-            print("You've alredy been in this room.")
+            print("\nYou've alredy been in this room.")
         while True:
             go2 = input("There is a hallway that extends dark tendrils towards you from to the left, and there is a cold hallway to the right. Are you going 'left' or 'right' or 'back'? ")
             if go2 == "left":
@@ -156,7 +156,7 @@ while True:
                     print(f"Your damage is now {player_dmg}.\n")
             r3 = True        
         else:
-            print("You've alredy been in this room.")
+            print("\nYou've alredy been in this room.")
         while True:
             go3 = input("There is a frigid hallway to your left , and there is a dark hallway to the right. Are you going 'left' or 'right' or 'back'? ")
             if go3 == "left":
@@ -185,7 +185,7 @@ while True:
                     print("\nTwo HP Potions were added to heals inventory")
             r4 = True
         else:
-            print("You've alredy been in this room.")
+            print("\nYou've alredy been in this room.")
         while True:
             go4 = input("\nThere is a hallway going forward and then turning right, it is aglow with embers. Do you 'follow' it or go 'back'?('follow' or 'back') ")
             if go4 == "follow":
@@ -221,7 +221,7 @@ while True:
                     print(f"\nYour max health is now {max_hp} and your health is {player_hp}.")
             r5 = True
         else:
-            print("You've alredy been in this room.")
+            print("\nYou've alredy been in this room.")
         while True:
             go5 = input("\nStraight in front of you a hallway expels sulfur and heat. Do you 'follow' it or go 'back'?('follow' or 'back') ")
             if go5 == "follow":
@@ -257,7 +257,7 @@ while True:
                     print(f"\nYour max health is now {max_hp} and your health is {player_hp}.")
             r6 = True
         else:
-            print("You've alredy been in this room.")
+            print("\nYou've alredy been in this room.")
         while True:
             go6 = input("\nThe hallway to the left is freezing, the one to the right you cannot see. Do you go 'left' or 'right' or 'back'? ")
             if go6 == "left":
@@ -283,19 +283,19 @@ while True:
                     player_dmg = 70
                     print("You replaced your old weapon.\n")
                     print(f"Your damage is now {player_dmg}.\n")
-            while True:
-                go7 = input("\nStraight ahead the hallway has walls with waterfalls of molten lava. Do you 'follow' it or go 'back'? ")
-                if go7 == "follow":
-                    r_count +=2
-                    break
-                elif go7 == "back":
-                    r_count -= 1
-                    break
-                else:
-                    continue
             r7 = True
         else:
-            print("You've alredy been in this room.")
+            print("\nYou've alredy been in this room.")
+        while True:
+            go7 = input("\nStraight ahead the hallway has walls with waterfalls of molten lava. Do you 'follow' it or go 'back'? ")
+            if go7 == "follow":
+                r_count +=2
+                break
+            elif go7 == "back":
+                r_count -= 1
+                break
+            else:
+                continue
     elif r_count == 8:
         if r8 == False:
             r8_return = combat(player_dmg, max_hp, enemy2_name, enemy2_dmg, enemy2_hp)
@@ -307,20 +307,20 @@ while True:
                 if c8 == "yes":
                     heals.append("Big HP Potion(heals 100 health)")
                     print("A Big HP Potion was added to heals inventory.")
-            while True:
-                go8 = input("\nThe hallway in front of you has a glowing river of lava and what seems to be a drawbridge mechanism. Do you 'follow' it or go 'back'? ")
-                if go8 == "follow":
-                    print("\nYou get to the drawbridge mechanism and spin it. The draw bridge comes down over the lava river.")
-                    r_count +=1
-                    break
-                elif go8 == "back":
-                    r_count -= 2
-                    break
-                else:
-                    continue
             r8 = True
         else:
-            print("You've alredy been in this room.")
+            print("\nYou've alredy been in this room.")
+        while True:
+            go8 = input("\nThe hallway in front of you has a glowing river of lava and what seems to be a drawbridge mechanism. Do you 'follow' it or go 'back'? ")
+            if go8 == "follow":
+                print("\nYou get to the drawbridge mechanism and spin it. The draw bridge comes down over the lava river.")
+                r_count +=1
+                break
+            elif go8 == "back":
+                r_count -= 2
+                break
+            else:
+                continue
     elif r_count == 9:
         r9_return = combat(player_dmg, max_hp, boss_name, boss_dmg, boss_hp)
         if r9_return == "Over":
