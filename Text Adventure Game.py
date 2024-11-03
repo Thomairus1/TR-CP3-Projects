@@ -285,6 +285,7 @@ while True:
                     print(f"Your damage is now {player_dmg}.\n")
             r7 = True
         else:
+            # enemy in this room doesn't respawn infinitely
             print("\nYou've alredy been in this room.")
         while True:
             go7 = input("\nStraight ahead the hallway has walls with waterfalls of molten lava. Do you 'follow' it or go 'back'? ")
@@ -309,6 +310,7 @@ while True:
                     print("A Big HP Potion was added to heals inventory.")
             r8 = True
         else:
+            # enemy in this room doesn't respawn infinitely
             print("\nYou've alredy been in this room.")
         while True:
             go8 = input("\nThe hallway in front of you has a glowing river of lava and what seems to be a drawbridge mechanism. Do you 'follow' it or go 'back'? ")
