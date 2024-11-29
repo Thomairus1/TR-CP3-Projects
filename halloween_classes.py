@@ -2,40 +2,51 @@ class Monster():
     def __init__(self, name, where):
         self.name = name
         self.where = where
-    def attack(self, other):
-        if self.attack > other.attack:
-            print(f"{self.name} won against {other.name}!")
-        elif other.attack > self.attack:
-            print(f"{other.name} won against {self.name}!")
+    def attack(self):
+        pass
+    def __str__(self):
+        return f"This is {self.name} and it lives in {self.place}"
 
 class Vampire(Monster):
-    def __init__(self, name, where, attack):
+    def __init__(self, name, where):
         super().__init__(name, where)
-        self.attack = attack
-    how_attack = "bites neck"
+
+    def attack(self):
+        return f"{self.name} bites  your neck..."
 
 class Troll(Monster):
-    def __init__(self, name, where, attack):
+    def __init__(self, name, where):
         super().__init__(name, where)
-        self.attack = attack
-    how_attack = "swings with club"
+
+    def attack(self):
+        return f"{self.name} swings his wooden club at your head..."
 
 class Skeleton(Monster):
-    def __init__(self, name, where, attack):
+    def __init__(self, name, where):
         super().__init__(name, where)
-        self.attack = attack
-    how_attack = "swings sword"
+
+    def attack(self):
+        return f"{self.name} swings at you with his sword..."
 
 class Dragon(Monster):
-    def __init__(self, name, where, attack):
+    def __init__(self, name, where):
         super().__init__(name, where)
-        self.attack = attack
-    how_attack = "breathes fire"
+        
+    def attack(self):
+        return f"{self.name} melts yourr armor by breathing fire..."
+    
+print(Vampire("Dracula", "Pensylvania"))
+print(Vampire.attack())
+print()
 
-vampire1 = Vampire("Dracula", "Pensylvania", 15)
+print(Troll("Dave", "Cave"))
+print(Troll.attack())
+print()
 
-troll1 = Troll("Dave", "Cave", 10)
+print(Skeleton("Sam", "Dungeon"))
+print(Skeleton.attack())
+print()
 
-skeleton1 = Skeleton("Sam", "Dungeon", 12)
-
-dragon1 = Dragon("Smaug", "Lonely Mountain", 25)
+print(Dragon("Smaug", "Lonely Mountain"))
+print(Dragon.attack())
+print()
