@@ -5,35 +5,35 @@ class Monster():
     def attack(self):
         pass
     def __str__(self):
-        return f"This is {self.name} and it lives in {self.place}"
+        return f"This is {self.name} and it lives in {self.where}"
 
 class Vampire(Monster):
     def __init__(self, name, where):
         super().__init__(name, where)
 
-    def attack(self):
-        return f"{self.name} bites  your neck..."
+    def attack():
+        return f"Dracula bites  your neck..."
 
 class Troll(Monster):
     def __init__(self, name, where):
         super().__init__(name, where)
 
-    def attack(self):
-        return f"{self.name} swings his wooden club at your head..."
+    def attack():
+        return f"Dave swings his wooden club at your head..."
 
 class Skeleton(Monster):
     def __init__(self, name, where):
         super().__init__(name, where)
 
-    def attack(self):
-        return f"{self.name} swings at you with his sword..."
+    def attack():
+        return f"Sam swings at you with his sword..."
 
 class Dragon(Monster):
     def __init__(self, name, where):
         super().__init__(name, where)
         
-    def attack(self):
-        return f"{self.name} melts yourr armor by breathing fire..."
+    def attack():
+        return f"Smaug melts yourr armor by breathing fire..."
     
 print(Vampire("Dracula", "Pensylvania"))
 print(Vampire.attack())
